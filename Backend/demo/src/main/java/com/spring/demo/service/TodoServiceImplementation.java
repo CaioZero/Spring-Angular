@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.spring.demo.model.Todo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -33,17 +32,33 @@ public class TodoServiceImplementation implements TodoService {
        Todo todo = findById(id);
        if(todo == null) return null;
 
-       if(todos.remove(todo)) return todo;
+       if(todos.remove(todo)) {
+        idCounter--;
+        return todo;
+        }
        return null;
     }
 
-    private Todo findById(long id) {
+    public Todo findById(long id) {
         for(Todo todo:todos){
             if(todo.getId() == id){
                 return todo;
             }
         }
         return null;
+    }
+
+    @Override
+    public Todo save(Todo todo) {
+        /**For -1 means that you are creating a todo, else you will update it */
+        if(todo.getId()==-1 || todo.getId()==0){
+            todo.setId(++idCounter);
+            todos.add(todo);
+        }else{
+            deleteById(todo.getId());
+            todos.add(todo);
+        }
+        return todo;
     }
 
    
