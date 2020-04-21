@@ -33,7 +33,7 @@ public class TodoServiceImplementation implements TodoService {
        if(todo == null) return null;
 
        if(todos.remove(todo)) {
-        idCounter--;
+        //   --idCounter;
         return todo;
         }
        return null;
