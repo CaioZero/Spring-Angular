@@ -68,8 +68,7 @@ export class ListTodosComponent implements OnInit {
     this.router.navigate(['todos',id])
   }
 
-  saveTodo(){
-    console.log('save todo');
-
+  addTodo(){
+    this.router.navigate(['todos',-1])
   }
 }
