@@ -1,4 +1,4 @@
-package com.spring.demo.config;
+package com.spring.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

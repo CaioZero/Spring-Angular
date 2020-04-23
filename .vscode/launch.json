@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BcryptEncoderTest",
+            "request": "launch",
+            "mainClass": "com.spring.demo.util.BcryptEncoderTest",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-DemoApplication<demo>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
