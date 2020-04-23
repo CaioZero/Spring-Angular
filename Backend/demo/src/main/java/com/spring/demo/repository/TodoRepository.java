@@ -1,11 +1,13 @@
-// package com.spring.demo.repository;
+package com.spring.demo.repository;
 
-// import com.spring.demo.model.Todo;
+import java.util.List;
 
-// import org.springframework.data.jpa.repository.JpaRepository;
-// import org.springframework.stereotype.Repository;
+import com.spring.demo.model.Todo;
 
-// @Repository
-// public interface TodoRepository extends JpaRepository<Todo, String> {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-// }
+@Repository                                         //Entity and the it`s primary Key
+public interface TodoRepository extends JpaRepository<Todo, Long> {
+    List<Todo> findByUsername(String username);
+}

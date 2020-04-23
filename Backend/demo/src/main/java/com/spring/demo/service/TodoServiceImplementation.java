@@ -15,7 +15,7 @@ public class TodoServiceImplementation implements TodoService {
     // TodoRepository todoRepository;
 
     public static List<Todo> todos = new ArrayList<>();
-    public static int idCounter=0;
+    public static Long idCounter = (long) 0;
 
     static{
         todos.add(new Todo(++idCounter, "Caio Augusto", "Learning Spring", new Date(), false));
